@@ -1,8 +1,7 @@
 [user]
-    email = pierre@pingtimeout.fr
-    name = Pierre Laporte
-[push]
-    default = simple
+    #email = gdufour.prestataire@voyages-sncf.com
+    email = guillaume.duff@gmail.com
+    name = Guillaume Dufour
 [alias]
     ec = config --global --edit
     st = status
@@ -20,12 +19,12 @@
     ui = auto
 [core]
     editor = /usr/bin/vim
-	excludesfile = /Users/plaporte/.gitignore
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+[diff]
+	external = /usr/local/bin/git-diff.sh
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.4.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [help]
     autocorrect = 1
+[url "https://"]
+	insteadOf = git://

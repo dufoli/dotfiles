@@ -47,6 +47,8 @@ Thumbs.db
 *.swp
 .idea/
 *.iml
+.classpath
+.settings
 
 ##############
 # Java files #

@@ -10,9 +10,11 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim=$(which vimx)
+alias docker="sudo docker"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -45,7 +47,8 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby autojump rvm mvn)
+#plugins=(git ruby autojump rvm mvn)
+plugins=(git mvn docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,6 +107,7 @@ if [ -d $HOME/.rvm/bin ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
+<<<<<<< HEAD
 if [[ "$(uname)" == "Darwin" ]]; then
     # We are on Mac OSX
 
@@ -120,3 +124,12 @@ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
     # Do something under Windows NT platform
 fi
 
+=======
+if [ -d $HOME/.gvm/groovy/current/bin ]; then
+    PATH=$PATH:$HOME/.gvm/groovy/current/bin
+fi
+
+if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
+    PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin
+fi
+>>>>>>> tmp
