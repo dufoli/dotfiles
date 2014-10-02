@@ -5,6 +5,9 @@
 [alias]
     ec = config --global --edit
     st = status
+    stp = status -s
+    unstage = reset HEAD
+    reinit = reset --hard HEAD
     pr = pull --rebase
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
     ci = commit
@@ -19,8 +22,6 @@
     ui = auto
 [core]
     editor = /usr/bin/vim
-[diff]
-	external = /usr/local/bin/git-diff.sh
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/1.9.4.1/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

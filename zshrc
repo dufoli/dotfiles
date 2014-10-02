@@ -95,10 +95,12 @@ export GIT_PS1_SHOWUPSTREAM="verbose"
 # CCM prompt configuration
 function ccmls()
 {
-    current_cluster=`[ -f ~/.ccm/CURRENT ] && echo -n '(' && cat ~/.ccm/CURRENT | tr -d '\n' && echo -n ')'`
-    no_clusters=`echo -n '(' && ls ~/.ccm/ | egrep -v 'CURRENT|repository' | wc -l | tr -d '\n ' ; echo ')'`
-    no_active_cassandra_processes=`echo -n '(' && ps -ef | grep java | grep CassandraDaemon | wc -l | tr -d '\n ' ; echo ')'`
-    [ -n "${current_cluster}${no_clusters}" ] && echo -n "ccm:${current_cluster}${no_clusters}${no_active_cassandra_processes}"
+    if [ -d ~/.ccm ]; then
+        current_cluster=`[ -f ~/.ccm/CURRENT ] && echo -n '(' && cat ~/.ccm/CURRENT | tr -d '\n' && echo -n ')'`
+        no_clusters=`echo -n '(' && ls ~/.ccm/ | egrep -v 'CURRENT|repository' | wc -l | tr -d '\n ' ; echo ')'`
+        no_active_cassandra_processes=`echo -n '(' && ps -ef | grep java | grep CassandraDaemon | wc -l | tr -d '\n ' ; echo ')'`
+        [ -n "${current_cluster}${no_clusters}" ] && echo -n "ccm:${current_cluster}${no_clusters}${no_active_cassandra_processes}"
+    fi
 }
 export PS1='${ret_status}%{$fg_bold[green]%}%p %{$fg[white]%}%n@%M %{$fg[cyan]%}%c %{$fg_bold[yellow]%}$(ccmls)%{$fg_bold[yellow]%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 $ '
@@ -107,7 +109,6 @@ if [ -d $HOME/.rvm/bin ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
-<<<<<<< HEAD
 if [[ "$(uname)" == "Darwin" ]]; then
     # We are on Mac OSX
 
@@ -117,14 +118,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
     else
         echo "You may want to install autojump from homebrew"
     fi
-
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     # Do something under Linux platform
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
     # Do something under Windows NT platform
 fi
 
-=======
 if [ -d $HOME/.gvm/groovy/current/bin ]; then
     PATH=$PATH:$HOME/.gvm/groovy/current/bin
 fi
@@ -132,4 +131,3 @@ fi
 if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
     PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin
 fi
->>>>>>> tmp
