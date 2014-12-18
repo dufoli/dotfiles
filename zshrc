@@ -11,10 +11,13 @@ ZSH_THEME="robbyrussell"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=$(which vimx)
-alias docker="sudo docker"
+#alias docker="sudo docker"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
+
+# Add by Duff :  Change dir auto
+AUTO_CD="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
