@@ -6,6 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+#ZSH_THEME="avit"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -46,6 +47,7 @@ AUTO_CD="true"
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
+HISTCONTROL=ignoreboth
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -90,46 +92,29 @@ else
     echo "~/env/ folder not found, nothing was sourced"
 fi
 
+
 # Git prompt configuration
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUPSTREAM="verbose"
-# CCM prompt configuration
-function ccmls()
-{
-    if [ -d ~/.ccm ]; then
-        current_cluster=`[ -f ~/.ccm/CURRENT ] && echo -n '(' && cat ~/.ccm/CURRENT | tr -d '\n' && echo -n ')'`
-        no_clusters=`echo -n '(' && ls ~/.ccm/ | egrep -v 'CURRENT|repository' | wc -l | tr -d '\n ' ; echo ')'`
-        no_active_cassandra_processes=`echo -n '(' && ps -ef | grep java | grep CassandraDaemon | wc -l | tr -d '\n ' ; echo ')'`
-        [ -n "${current_cluster}${no_clusters}" ] && echo -n "ccm:${current_cluster}${no_clusters}${no_active_cassandra_processes}"
-    fi
-}
-export PS1='${ret_status}%{$fg_bold[green]%}%p %{$fg[white]%}%n@%M %{$fg[cyan]%}%c %{$fg_bold[yellow]%}$(ccmls)%{$fg_bold[yellow]%} %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
+export PS1='${ret_status}%{$fg_bold[green]%}%p %{$fg[white]%}%n@%M:%{$fg_bold[magenta]%}[%*] %{$fg[cyan]%}%72<...<%~%<< %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}
 $ '
 
 if [ -d $HOME/.rvm/bin ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 fi
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    # We are on Mac OSX
-
-    # Autojump with homebrew
-    if [ -f `brew --prefix`/etc/autojump.sh ]; then
-        source `brew --prefix`/etc/autojump.sh
-    else
-        echo "You may want to install autojump from homebrew"
-    fi
-elif [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
-    # Do something under Linux platform
-elif [ "$(expr substr $(uname -s) 1 10)" = "MINGW32_NT" ]; then
-    # Do something under Windows NT platform
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
 fi
+
+export PATH=$PATH:~/Software/bin
+
+eval `dircolors ~/.ls_colors`
+
+export SVN_EDITOR=vim
 
 if [ -d $HOME/.gvm/groovy/current/bin ]; then
     PATH=$PATH:$HOME/.gvm/groovy/current/bin
 fi
+
 
 if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
     PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin

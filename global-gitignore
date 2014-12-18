@@ -7,6 +7,7 @@
 *.exe
 *.o
 *.so
+target/
 
 ############
 # Packages #
@@ -51,9 +52,9 @@ Thumbs.db
 .settings
 
 ##############
-# Java files #
+# Other CVS  #
 ##############
-target/
+.svn/
 
 ###########################
 # Personal internal files #
