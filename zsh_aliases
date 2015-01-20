@@ -76,4 +76,12 @@ alias svndiff='svn diff C L'
 
 # Docker alias
 alias docker.io="docker"
-alias doclean='docker stop $(docker ps -q) && docker rm $(docker ps -a -q)'
+
+#untar all
+alias untgz='find . -name \*t\*gz -exec tar -zxvf {} \;'
+
+# Example aliases
+alias vim=$(which vimx)
+
+alias dockerpsrm='docker ps -a -q | xargs docker rm -fv'
+alias dockerpsrm='docker images -a -q | xargs docker rmi -f'
