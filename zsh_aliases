@@ -73,3 +73,7 @@ alias -g WL='| wc -l'
 # SVN Alias
 alias -g C='| colordiff'
 alias svndiff='svn diff C L'
+
+# Docker alias
+alias docker.io="docker"
+alias doclean='docker stop $(docker ps -q) && docker rm $(docker ps -a -q)'

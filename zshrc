@@ -11,7 +11,6 @@ ZSH_THEME="avit"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=$(which vimx)
-#alias docker="sudo docker"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
