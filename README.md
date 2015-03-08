@@ -18,6 +18,10 @@ Run these commands :
     ln -s ~/dotfiles/zsh_alias ~/.zsh_alias
     ln -s ~/dotfiles/zshrc ~/.zshrc
 
+
+	npm completion >> ~/dotfiles/npm_completion
+    ln -s ~/dotfiles/npm_completion ~/.npm_completion
+
 Change default bash :
 
     chsh

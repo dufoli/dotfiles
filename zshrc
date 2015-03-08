@@ -47,7 +47,7 @@ HISTCONTROL=ignoreboth
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git ruby autojump rvm mvn)
-plugins=(git mvn docker)
+plugins=(git node mvn docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,3 +113,5 @@ fi
 if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
     PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin
 fi
+
+source ~/.npm_completion
