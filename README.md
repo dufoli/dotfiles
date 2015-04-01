@@ -17,6 +17,7 @@ Run these commands :
     ln -s ~/dotfiles/vimrc ~/.vimrc
     ln -s ~/dotfiles/zsh_alias ~/.zsh_alias
     ln -s ~/dotfiles/zshrc ~/.zshrc
+    ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
 
 	npm completion >> ~/dotfiles/npm_completion
