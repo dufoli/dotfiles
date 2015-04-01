@@ -114,4 +114,11 @@ if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
     PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin
 fi
 
-source ~/.npm_completion
+if [ -f ~/.npm_completion ]; then
+	source ~/.npm_completion
+fi
+
+if [ -d $HOME/devhome/app/libreoffice/opt/libreoffice4.3/program ]; then
+    PATH=$PATH:$HOME/devhome/app/libreoffice/opt/libreoffice4.3/program 
+fi
+
