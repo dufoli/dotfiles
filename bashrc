@@ -35,6 +35,12 @@ esac
 
 #This is for show details with the current branch name in the promp
 #See the /etc/bash_completion.d/git file for more information
+if ! type -t __git_ps1 | grep -q function ;
+then
+	if [ -f /etc/bash_completion.d/git ]; then
+	source /etc/bash_completion.d/git
+	fi
+fi
 #Show the diff with the upstream branch (<, >, <> or =)
 GIT_PS1_SHOWUPSTREAM="auto"
 #Show a * for a non clean repository, a + for a repository with staged file
