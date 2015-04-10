@@ -82,8 +82,8 @@ bashcompinit
 # Source external environment
 if [ -f ~/env/env.source ]; then
     source ~/env/env.source
-else
-    echo "~/env/ folder not found, nothing was sourced"
+#else
+#    echo "~/env/ folder not found, nothing was sourced"
 fi
 
 
