@@ -110,15 +110,15 @@ if [ -d $HOME/.gvm/groovy/current/bin ]; then
 fi
 
 
-if [ -d $HOME/devhome/app/apache-maven-3.0.3/bin ]; then
-    PATH=$PATH:$HOME/devhome/app/apache-maven-3.0.3/bin
+if [ -d $HOME/devhome/app/apache-maven-*/bin/ ]; then
+    PATH=$PATH:`dirname $HOME/devhome/app/apache-maven-*/bin/mvn`
 fi
 
 if [ -f ~/.npm_completion ]; then
 	source ~/.npm_completion
 fi
 
-if [ -d $HOME/devhome/app/libreoffice/opt/libreoffice4.3/program ]; then
-    PATH=$PATH:$HOME/devhome/app/libreoffice/opt/libreoffice4.3/program 
+if [ -d $HOME/devhome/app/libreoffice/opt/libreoffice*/program ]; then
+    PATH=$PATH:`dirname $HOME/devhome/app/libreoffice/opt/libreoffice*/program`
 fi
 
