@@ -118,7 +118,7 @@ if [ -f ~/.npm_completion ]; then
 	source ~/.npm_completion
 fi
 
-if [ -d $HOME/devhome/app/libreoffice/opt/libreoffice*/program ]; then
-    PATH=$PATH:`dirname $HOME/devhome/app/libreoffice/opt/libreoffice*/program`
+if [ -d /usr/lib/libreoffice/program ]; then
+    PATH=$PATH:/usr/lib/libreoffice/program
 fi
 
