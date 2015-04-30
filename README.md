@@ -15,7 +15,7 @@ Run these commands :
     ln -s ~/dotfiles/inputrc ~/.inputrc
     ln -s ~/dotfiles/ls_colors ~/.ls_colors
     ln -s ~/dotfiles/vimrc ~/.vimrc
-    ln -s ~/dotfiles/zsh_alias ~/.zsh_alias
+    ln -s ~/dotfiles/zsh_aliases ~/.zsh_aliases
     ln -s ~/dotfiles/zshrc ~/.zshrc
     ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 
