@@ -50,6 +50,7 @@ set showcmd		" Show (partial) command in status line.
 set number
 set shiftwidth=4
 set tabstop=4
+set laststatus=2
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

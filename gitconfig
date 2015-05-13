@@ -28,6 +28,7 @@
 [core]
     editor = /usr/bin/vim
     pager = less -erX
+	autocrlf = input
 [push]
     default = simple
 [mergetool "sourcetree"]
