@@ -10,7 +10,8 @@ mvn -e -U -B dependency:copy -Dartifact=org.apache.logging.log4j:log4j-api:LATES
 mvn -e -U -B dependency:copy -Dartifact=org.apache.logging.log4j:log4j-slf4j-impl:LATEST:jar -Dproject.basedir=. -DoutputDirectory=$1/lib
 mvn -e -U -B dependency:copy -Dartifact=org.apache.logging.log4j:log4j-core:LATEST:jar -Dproject.basedir=. -DoutputDirectory=$1/lib
 
-mv $1/lib/slf4j-simple-*.jar{,.backup}
+#mv $1/lib/slf4j-simple-*.jar{,.backup}
+rename 's/(.*)/$1.backup/' slf4j-simple-*.jar
 
 echo '<?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
