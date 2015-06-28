@@ -101,24 +101,43 @@ fi
 
 export PATH=$PATH:~/Software/bin
 
-eval `dircolors ~/.ls_colors`
+#eval `dircolors ~/.ls_colors`
+
+if whence dircolors >/dev/null; then
+	eval "$(dircolors -b)"
+	zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+	alias ls='ls --color'
+else
+	export CLICOLOR=1
+	zstyle ':completion:*:default' list-colors ''
+fi
 
 export SVN_EDITOR=vim
 
 if [ -d $HOME/.gvm/groovy/current/bin ]; then
-    PATH=$PATH:$HOME/.gvm/groovy/current/bin
+	PATH=$PATH:$HOME/.gvm/groovy/current/bin
 fi
 
 
 if [ -d $HOME/devhome/app/apache-maven-*/bin/ ]; then
-    PATH=$PATH:`dirname $HOME/devhome/app/apache-maven-*/bin/mvn`
+	PATH=$PATH:`dirname $HOME/devhome/app/apache-maven-*/bin/mvn`
 fi
 
 if [ -f ~/.npm_completion ]; then
 	source ~/.npm_completion
 fi
 
+if [ -f /usr/local/share/zsh/site-functions ]; then
+	source /usr/local/share/zsh/site-functions/*
+fi
+
 if [ -d /usr/lib/libreoffice/program ]; then
-    PATH=$PATH:/usr/lib/libreoffice/program
+	PATH=$PATH:/usr/lib/libreoffice/program
+fi
+
+if which jenv > /dev/null; then
+	#export JENV_ROOT=/usr/local/opt/jenv
+	export PATH="$HOME/.jenv/bin:$PATH"
+   	eval "$(jenv init -)";
 fi
 
