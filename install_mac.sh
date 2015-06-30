@@ -10,7 +10,7 @@ echo Install Homebrew, Postgres, wget and cask
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/science
 brew install wget
-brew install sshfs
+brew cask install sshfs
 #brew install postgresql
 #brew install go
 brew install node
@@ -36,7 +36,7 @@ brew cask install little-snitch
 brew cask install transmit
 brew cask install vlc
 brew cask install iterm2
-brew cask install jenv
+brew install jenv
 brew cask install java
 brew cask install intellij-idea-ce
 
@@ -66,7 +66,7 @@ brew cask install easyfind
 echo Install Google Apps | Chrome not included cause of 1Password Plugin
 # brew cask install google-chrome
 brew cask install google-drive
-brew cask install google-music-manager
+brew cask install music-manager
 #brew cask install google-earth
 #brew cask install chromecast
 
