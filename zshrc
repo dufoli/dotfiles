@@ -47,7 +47,7 @@ HISTCONTROL=ignoreboth
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git ruby autojump rvm mvn)
-plugins=(git node mvn docker)
+plugins=(git node mvn docker brew)
 
 source $ZSH/oh-my-zsh.sh
 
