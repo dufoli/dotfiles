@@ -47,7 +47,7 @@ HISTCONTROL=ignoreboth
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git ruby autojump rvm mvn)
-plugins=(git node mvn docker brew)
+plugins=(git node mvn docker brew colored-man colorize github virtualenv pip python zsh-syntax-highlighting symfony)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,9 +119,9 @@ if [ -d $HOME/.gvm/groovy/current/bin ]; then
 fi
 
 
-if [ -d $HOME/devhome/app/apache-maven-*/bin/ ]; then
-	PATH=$PATH:`dirname $HOME/devhome/app/apache-maven-*/bin/mvn`
-fi
+#if [ -d $HOME/devhome/app/apache-maven-*/bin/ ]; then
+#	PATH=$PATH:`dirname $HOME/devhome/app/apache-maven-*/bin/mvn`
+#fi
 
 if [ -f ~/.npm_completion ]; then
 	source ~/.npm_completion

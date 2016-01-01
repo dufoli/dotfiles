@@ -6,12 +6,14 @@ echo  '\n'
 
 echo Install and Set San Francisco as System Font
 ruby -e "$(curl -fsSL https://raw.github.com/wellsriley/YosemiteSanFranciscoFont/master/install)"
-echo Install Homebrew, Postgres, wget and cask
+echo Install Homebrew, wget
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/science
 brew install wget
 brew cask install sshfs
 #brew install postgresql
+brew uninstall php56
+brew install mysql
 #brew install go
 brew install node
 #brew install ant
@@ -21,6 +23,8 @@ brew install ffmpeg
 #npm install -g gitjk
 #sudo npm install -g cordova
 #npm install phonegap -g
+npm install -g bower
+npm install -g grunt
 
 brew tap phinze/cask
 brew install brew-cask
@@ -37,8 +41,8 @@ brew cask install transmit
 brew cask install vlc
 brew cask install iterm2
 brew install jenv
-brew cask install java
-brew cask install intellij-idea-ce
+#brew cask install java
+#brew cask install intellij-idea-ce
 
 
 ## get from App Store
@@ -75,9 +79,9 @@ echo Install Some additional Apps
 brew cask install firefox
 
 brew cask install skype
-brew cask install jdownloader
-brew cask install lastfm
-brew cask install all2mp3
+#brew cask install jdownloader
+#brew cask install lastfm
+#brew cask install all2mp3
 #brew cask install spotify
 #brew cask install spotify-notifications
 # Link Cask Apps to Alfred

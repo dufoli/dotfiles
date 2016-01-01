@@ -4,7 +4,7 @@ dotfiles
 Run these commands :
 
     cd
-    git clone git@github.com:Dufgui/dotfiles.git
+    git clone git@github.com:dufoli/dotfiles.git
     ln -s ~/dotfiles/bash_aliases ~/.bash_aliases
     ln -s ~/dotfiles/bash_logout ~/.bash_logout
     ln -s ~/dotfiles/bashrc ~/.bashrc

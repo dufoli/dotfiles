@@ -139,3 +139,9 @@ fi
 # colorisation de la console perso
 eval `dircolors ~/.ls_colors`
 
+
+alias symfony-rebuild='./symfony doctrine:build --all-classes && ./symfony doctrine:build-sql'
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+alias node='nodejs'
